@@ -1,23 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import DuckTableInfo from './components/DuckTableInfo'
+import { useState } from 'react'
 
-function App() {
+const App = () => {
+  const [duckTableInfo, setDuckTableInfo] = useState([
+    {
+      id: 1,
+      time: 'May 10th at 1:00pm',
+      food: 'Bread',
+      location: 'Central Park',
+      numberOfDucks: 5,
+      foodConsumption: 5,
+    }
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Header title='Duck Info Tracker'/>
+      {duckTableInfo.length > 0 ? <DuckTableInfo duckTableInfo={duckTableInfo} /> : "No information to display"}
     </div>
   );
 }
