@@ -32,11 +32,11 @@ const DuckTableInfo = ({duckTableInfo}) => {
       <Table className={classes.table} aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell align="center">Time</TableCell>
-            <TableCell align="center">Food</TableCell>
-            <TableCell align="center">Location</TableCell>
-            <TableCell align="center">Number of ducks fed</TableCell>
-            <TableCell align="center">Food consumption of ducks</TableCell>
+            <TableCell align="center">TIME</TableCell>
+            <TableCell align="center">FOOD</TableCell>
+            <TableCell align="center">LOCATION</TableCell>
+            <TableCell align="center">NUMBER OF DUCKS FED</TableCell>
+            <TableCell align="center">FOOD CONSUMPTION OF DUCKS</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>

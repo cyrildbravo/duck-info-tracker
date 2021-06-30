@@ -11,7 +11,7 @@ const AddDuckInfo = ({onAdd}) => {
   const onSubmit = (e) => {
     e.preventDefault()
     if(!time || !food || !location || !numberOfDucks || !foodConsumption){
-      alert('All fields are required.')
+      alert('All fields are required. Please make sure you have answered all the fields.')
       return
     }
     onAdd({time,food,location,numberOfDucks,foodConsumption})
@@ -34,11 +34,11 @@ const AddDuckInfo = ({onAdd}) => {
           </div>
           <div className='form-control'>
             <label>What food the ducks are fed?</label>
-            <input type='text' placeholder='Example: Bread' value={food} onChange={(e) => setFood(e.target.value)}></input>
+            <input type='text' placeholder='Example: Cracked corn' value={food} onChange={(e) => setFood(e.target.value)}></input>
           </div>
             <div className='form-control'>
             <label>Where the ducks are fed?</label>
-            <input type='text' placeholder='Example: Central Park' value={location} onChange={(e) => setLocation(e.target.value)}></input>
+            <input type='text' placeholder='Example: Central Park, New York, USA' value={location} onChange={(e) => setLocation(e.target.value)}></input>
           </div>
             <div className='form-control'>
             <label>How many ducks are fed?</label>
