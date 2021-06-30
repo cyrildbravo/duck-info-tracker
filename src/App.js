@@ -1,19 +1,10 @@
 import Header from './components/Header'
 import DuckTableInfo from './components/DuckTableInfo'
 import AddDuckInfo from './components/AddDuckInfo'
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 const App = () => {
-  const [duckTableInfo, setDuckTableInfo] = useState([
-    {
-      id: 1,
-      time: 'May 10th at 1:00pm',
-      food: 'Bread',
-      location: 'Central Park',
-      numberOfDucks: 5,
-      foodConsumption: 5,
-    }
-  ])
+  const [duckTableInfo, setDuckTableInfo] = useState([])
 
   // Add Duck info
   const addDuckInfo = (duckInfo) => {
@@ -22,6 +13,21 @@ const App = () => {
     setDuckTableInfo([...duckTableInfo, newDuckInfo])
   }
 
+  useEffect(() => {
+    const getDuckTableInfo = async () => {
+      const duckTableInfoFromServer = await fetchDuckTableInfo()
+      setDuckTableInfo(duckTableInfoFromServer)
+    }
+    getDuckTableInfo()
+  }, [])
+
+  // Fetch Duck Table Info
+  const fetchDuckTableInfo = async () => {
+    const res = await fetch ('http://localhost:5000/duckTableInfo')
+    const data = await res.json()
+    console.log(data)
+    return data
+  }
 
   return (
     <div className='container'>

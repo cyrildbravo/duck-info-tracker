@@ -40,8 +40,8 @@ const DuckTableInfo = ({duckTableInfo}) => {
           </TableRow>
         </TableHead>
         <TableBody>
-          {duckTableInfo.map((duckInfo) => (
-            <DuckInfo key={duckInfo.id} duckInfo={duckInfo}></DuckInfo>
+          {duckTableInfo.map((duckInfo, index) => (
+            <DuckInfo key={index} duckInfo={duckInfo}></DuckInfo>
           ))}
         </TableBody>
       </Table>
