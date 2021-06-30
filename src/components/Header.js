@@ -1,15 +1,12 @@
-import Button from './Button';
-
 const Header = ({title}) => {
-  const onClick = (e) => {
-		console.log(e);
-	}
-  
   return (
-    <header className='header'>
-      <h1>{title}</h1>
-      <Button text='Submit' onClick={onClick}/>
-    </header>
+    <div>
+      <header className='header'>
+        <h1>{title}</h1>
+      </header>
+      <p>This is a research survey on how ducks are being fed in parks around the world. Please answer the questions as honestly as you can. Thank you for your participation.</p>
+    </div>
+    
   )
 }
 

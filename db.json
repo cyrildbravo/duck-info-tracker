@@ -1,20 +1,12 @@
 {
   "duckTableInfo": [
     {
-      "id": 1,
       "time": "1:00pm",
       "food": "Bread",
       "location": "Central Park",
       "numberOfDucks": "5",
-      "foodConsumption": "5"
-    },
-    {
-      "time": "Q",
-      "food": "Q",
-      "location": "Q",
-      "numberOfDucks": "Q",
-      "foodConsumption": "Q",
-      "id": 2
+      "foodConsumption": "5",
+      "id": 1
     }
   ]
 }
