@@ -1,8 +1,23 @@
-# Getting Started with Create React App
+# Duck Info Tracker - A React Web Application
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This goal of this project is to crowdsource information on how ducks are fed in parks around the world and view all these information in one web application. Also, this project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+
+## Pre-requisites
+- NodeJS: node (v16.4.0 or higher) and npm (v7.18.1 or higher)
+- React Developer Tools extension for Chrome
+- VSCode or any code editor you prefer
 
 ## Available Scripts
+
+In order to use JSON Server, run these commands:
+
+### `npm i json-server`
+
+Install JSON server to be used as a dummy back-end for this application
+
+### `npm run server`
+
+Runs JSON server to be used as a dummy back-end for this application
 
 In the project directory, you can run:
 
