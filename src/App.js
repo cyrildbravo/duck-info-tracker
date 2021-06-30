@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import Header from './components/Header'
+import DuckTableInfo from './components/DuckTableInfo'
+import AddDuckInfo from './components/AddDuckInfo'
+import { useState, useEffect } from 'react'
 
-function App() {
+const App = () => {
+  const [duckTableInfo, setDuckTableInfo] = useState([])
+
+  // Add Duck info
+  const addDuckInfo = async (duckInfo) => {
+    const res = await fetch('http://localhost:5000/duckTableInfo', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(duckInfo)
+    })
+
+    const data = await res.json()
+    setDuckTableInfo([...duckTableInfo, data])
+
+    // const id = Math.floor(Math.random() * 10000) + 1
+    // const newDuckInfo = { id, ...duckInfo}
+    // setDuckTableInfo([...duckTableInfo, newDuckInfo])
+  }
+
+  useEffect(() => {
+    const getDuckTableInfo = async () => {
+      const duckTableInfoFromServer = await fetchDuckTableInfo()
+      setDuckTableInfo(duckTableInfoFromServer)
+    }
+    getDuckTableInfo()
+  }, [])
+
+  // Fetch Duck Table Info
+  const fetchDuckTableInfo = async () => {
+    const res = await fetch ('http://localhost:5000/duckTableInfo')
+    const data = await res.json()
+    console.log(data)
+    return data
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='container'>
+      <Header title='Duck Info Tracker'/>
+      <AddDuckInfo onAdd={addDuckInfo} />
+      {duckTableInfo.length > 0 ? <DuckTableInfo duckTableInfo={duckTableInfo} /> : "No information to display"}
     </div>
   );
 }

@@ -1,0 +1,12 @@
+{
+  "duckTableInfo": [
+    {
+      "time": "01:00 PM",
+      "food": "Cracked corn",
+      "location": "Central Park, New York, USA",
+      "numberOfDucks": "5",
+      "foodConsumption": "10g",
+      "id": 1
+    }
+  ]
+}
