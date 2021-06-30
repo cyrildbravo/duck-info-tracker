@@ -9,6 +9,16 @@ This goal of this project is to crowdsource information on how ducks are fed in 
 
 ## Available Scripts
 
+In order to use JSON Server, run these commands:
+
+### `npm i json-server`
+
+Install JSON server to be used as a dummy back-end for this application
+
+### `npm run server`
+
+Runs JSON server to be used as a dummy back-end for this application
+
 In the project directory, you can run:
 
 ### `npm start`
