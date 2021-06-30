@@ -1,14 +1,3 @@
-// const duckInfo = [
-//   {
-//     id: 1,
-//     time: 'May 10th at 1:00pm',
-//     food: 'Bread',
-//     location: 'Central Park',
-//     numberOfDucks: 5,
-//     foodConsumption: 5,
-//   }
-// ]
-
 import DuckInfo from './DuckInfo'
 import { makeStyles } from '@material-ui/core/styles';
 import Table from '@material-ui/core/Table';

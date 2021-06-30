@@ -18,10 +18,6 @@ const App = () => {
 
     const data = await res.json()
     setDuckTableInfo([...duckTableInfo, data])
-
-    // const id = Math.floor(Math.random() * 10000) + 1
-    // const newDuckInfo = { id, ...duckInfo}
-    // setDuckTableInfo([...duckTableInfo, newDuckInfo])
   }
 
   useEffect(() => {
@@ -36,7 +32,6 @@ const App = () => {
   const fetchDuckTableInfo = async () => {
     const res = await fetch ('http://localhost:5000/duckTableInfo')
     const data = await res.json()
-    console.log(data)
     return data
   }
 
