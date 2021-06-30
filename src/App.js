@@ -7,10 +7,21 @@ const App = () => {
   const [duckTableInfo, setDuckTableInfo] = useState([])
 
   // Add Duck info
-  const addDuckInfo = (duckInfo) => {
-    const id = Math.floor(Math.random() * 10000) + 1
-    const newDuckInfo = { id, ...duckInfo}
-    setDuckTableInfo([...duckTableInfo, newDuckInfo])
+  const addDuckInfo = async (duckInfo) => {
+    const res = await fetch('http://localhost:5000/duckTableInfo', {
+      method: 'POST',
+      headers: {
+        'Content-type': 'application/json'
+      },
+      body: JSON.stringify(duckInfo)
+    })
+
+    const data = await res.json()
+    setDuckTableInfo([...duckTableInfo, data])
+
+    // const id = Math.floor(Math.random() * 10000) + 1
+    // const newDuckInfo = { id, ...duckInfo}
+    // setDuckTableInfo([...duckTableInfo, newDuckInfo])
   }
 
   useEffect(() => {
